@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
 
         base_length = length/MAXRECT;
 	
-	    int size, rank;
+	int size, rank;
 
         MPI_Init(&argc,&argv);
         MPI_Comm_size(MPI_COMM_WORLD, &size);
@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
         double sum = 0;
         double lowlimit = b[0];	    
 
-	    sum = calcular(lowlimit, rank);
+	sum = calcular(lowlimit, rank);
 
         MPI_Reduce(&sum,b,1,MPI_DOUBLE,MPI_SUM,0,MPI_COMM_WORLD);
 
